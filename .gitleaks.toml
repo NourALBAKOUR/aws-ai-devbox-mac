@@ -1,0 +1,36 @@
+# Gitleaks Configuration
+# Detects hardcoded secrets in code
+
+title = "Gitleaks Config"
+
+[[rules]]
+description = "AWS Access Key"
+id = "aws-access-key"
+regex = '''(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}'''
+tags = ["key", "AWS"]
+
+[[rules]]
+description = "AWS Secret Key"
+id = "aws-secret-key"
+regex = '''(?i)aws(.{0,20})?(?-i)['\"][0-9a-zA-Z\/+]{40}['\"]'''
+tags = ["key", "AWS"]
+
+[[rules]]
+description = "Generic API Key"
+id = "generic-api-key"
+regex = '''(?i)(api[_-]?key|apikey)(.{0,20})?['\"][0-9a-zA-Z]{32,45}['\"]'''
+tags = ["key", "API"]
+
+[[rules]]
+description = "Generic Secret"
+id = "generic-secret"
+regex = '''(?i)(secret|password|passwd|pwd)(.{0,20})?['\"][^\s'\"]{8,}['\"]'''
+tags = ["secret"]
+
+[allowlist]
+description = "Allowlisted files"
+paths = [
+  '''\.env\.example$''',
+  '''\.md$''',
+  '''\.txt$'''
+]

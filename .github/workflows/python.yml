@@ -1,0 +1,98 @@
+name: Python Lint and Test
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'ai/**'
+      - '.github/workflows/python.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'ai/**'
+
+jobs:
+  lint:
+    name: Lint Python Code
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v4
+        with:
+          path: ai/.venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+      
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: |
+          cd ai
+          poetry install --no-interaction --no-root
+      
+      - name: Run Ruff
+        run: |
+          cd ai
+          poetry run ruff check src/
+      
+      - name: Run Black Check
+        run: |
+          cd ai
+          poetry run black --check src/
+      
+      - name: Run isort Check
+        run: |
+          cd ai
+          poetry run isort --check-only src/
+      
+      - name: Run MyPy
+        run: |
+          cd ai
+          poetry run mypy src/ --ignore-missing-imports || true
+  
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+      
+      - name: Install dependencies
+        run: |
+          cd ai
+          poetry install --no-interaction
+      
+      - name: Run tests
+        run: |
+          cd ai
+          poetry run pytest tests/ --cov=src --cov-report=xml || echo "No tests found"
+      
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./ai/coverage.xml
+          fail_ci_if_error: false

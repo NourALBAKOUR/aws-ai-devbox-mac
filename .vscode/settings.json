@@ -1,0 +1,88 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  
+  // Python settings
+  "python.defaultInterpreterPath": "${workspaceFolder}/ai/.venv/bin/python",
+  "python.formatting.provider": "none",
+  "python.linting.enabled": true,
+  "python.linting.ruffEnabled": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  
+  // Terraform settings
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "terraform.experimentalFeatures.validateOnSave": true,
+  
+  // Markdown settings
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    }
+  },
+  
+  // JSON settings
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  
+  // YAML settings
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced"
+  },
+  
+  // Shell script settings
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  
+  // Docker settings
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  
+  // Files
+  "files.exclude": {
+    "**/.terraform": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true
+  },
+  
+  // Terminal
+  "terminal.integrated.env.osx": {
+    "AWS_PAGER": ""
+  },
+  
+  // AWS Toolkit
+  "aws.telemetry": false,
+  
+  // Jupyter
+  "jupyter.askForKernelRestart": false,
+  "notebook.output.textLineLimit": 50
+}

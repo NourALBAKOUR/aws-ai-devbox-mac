@@ -1,0 +1,91 @@
+name: Terraform Validation
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'infra/**'
+      - 'terragrunt/**'
+      - '.github/workflows/terraform.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'infra/**'
+      - 'terragrunt/**'
+
+jobs:
+  terraform-validate:
+    name: Validate Terraform
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.6.0"
+      
+      - name: Terraform Format Check
+        run: |
+          cd infra
+          terraform fmt -check -recursive
+      
+      - name: Terraform Init
+        run: |
+          cd infra
+          terraform init -backend=false
+      
+      - name: Terraform Validate
+        run: |
+          cd infra
+          terraform validate
+  
+  tflint:
+    name: Run TFLint
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v4
+        with:
+          tflint_version: latest
+      
+      - name: Run TFLint
+        run: |
+          cd infra
+          tflint --init
+          tflint --recursive
+  
+  tfsec:
+    name: Run TFSec
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run tfsec
+        uses: aquasecurity/tfsec-action@v1.0.3
+        with:
+          working_directory: infra
+          soft_fail: false
+  
+  checkov:
+    name: Run Checkov
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run Checkov
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: infra/
+          framework: terraform
+          soft_fail: false
