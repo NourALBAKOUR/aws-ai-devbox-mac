@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Nour Al Bakour
+
 """
 FastAPI Inference Application
 Example inference endpoint for SageMaker or local testing

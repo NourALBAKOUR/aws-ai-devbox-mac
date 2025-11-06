@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 #
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Nour Al Bakour
+#
 # install_cli_mac.sh
-# Installs core CLI tools via Homebrew
+# Installs modern CLI tools: bat, eza, fzf, ripgrep, jq, yq
+#
 #
 
 set -euo pipefail

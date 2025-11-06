@@ -1,7 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Nour Al Bakour
+
 """
-LangChain with Amazon Bedrock
-Demonstrates LangChain integration for more complex workflows
+LangChain + Bedrock Integration Example
+Shows how to use LangChain with Amazon Bedrock for prompt chaining, retrieval, etc.
 """
+
 
 import os
 from langchain_aws import ChatBedrock, BedrockEmbeddings

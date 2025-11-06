@@ -1,0 +1,65 @@
+AWS AI DevBox for Mac
+Copyright (c) 2025 Nour Al Bakour
+
+This project is licensed under the Apache License 2.0 (see LICENSE file).
+
+Documentation and media files are licensed under Creative Commons Attribution 4.0 
+International License (CC BY 4.0) (see LICENSE-docs file).
+
+================================================================================
+
+Project Repository: https://github.com/NourALBAKOUR/aws-ai-devbox-mac
+
+================================================================================
+
+ATTRIBUTION REQUIREMENTS
+
+When using or redistributing this software:
+
+1. Retain the copyright notice and license information
+2. Include a link to the original repository: https://github.com/NourALBAKOUR/aws-ai-devbox-mac
+3. Indicate if modifications were made
+4. For documentation or derivative works, provide appropriate credit: "Based on AWS AI DevBox for Mac by Nour Al Bakour"
+
+================================================================================
+
+THIRD-PARTY DEPENDENCIES
+
+This project uses and installs various third-party tools and libraries, each with their own licenses:
+
+AWS Tools:
+- AWS CLI (Apache 2.0)
+- AWS SAM CLI (Apache 2.0)
+- AWS CDK (Apache 2.0)
+
+Infrastructure Tools:
+- Terraform (BUSL 1.1)
+- Terragrunt (MIT)
+- tflint (MPL 2.0)
+- tfsec (MIT)
+- checkov (Apache 2.0)
+
+Python Libraries:
+- boto3 (Apache 2.0)
+- langchain (MIT)
+- pandas (BSD 3-Clause)
+- numpy (BSD 3-Clause)
+- fastapi (MIT)
+
+Container Tools:
+- Docker Desktop (proprietary, see Docker's license)
+- Colima (MIT)
+
+Security Tools:
+- sops (MPL 2.0)
+- age (BSD 3-Clause)
+- gitleaks (MIT)
+
+Please refer to each tool's license for specific terms and conditions.
+
+================================================================================
+
+DISCLAIMER
+
+This software is provided "as is", without warranty of any kind, express or
+implied. See the LICENSE file for complete disclaimer and limitation of liability.

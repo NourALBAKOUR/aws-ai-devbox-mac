@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Nour Al Bakour
+
 """
 Bedrock Runtime API Examples
 Demonstrates basic text generation and embeddings with Amazon Bedrock

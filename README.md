@@ -1,8 +1,8 @@
-# AWS Mac Bootstrap for Bedrock & SageMaker
+# AWS AI DevBox for Mac
 
 > **Production-ready MacBook development environment for AWS AI/ML infrastructure with Terraform and Terragrunt**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Terraform](https://img.shields.io/badge/Terraform-1.6+-purple.svg)](https://www.terraform.io/)
 [![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
 
@@ -23,8 +23,8 @@ This repository provides a complete, automated bootstrap for MacBook (Apple Sili
 ### One-Command Bootstrap
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/aws-mac-bootstrap-bedrock-sagemaker.git
-cd aws-mac-bootstrap-bedrock-sagemaker
+git clone https://github.com/NourALBAKOUR/aws-ai-devbox-mac.git
+cd aws-ai-devbox-mac
 
 # Run all bootstrap scripts
 bash bootstrap/install_homebrew.sh && \
@@ -356,8 +356,23 @@ pre-commit autoupdate
 ## Support
 
 - 📖 [Documentation](docs/)
-- 🐛 [Issues](https://github.com/YOUR-USERNAME/aws-mac-bootstrap-bedrock-sagemaker/issues)
-- 💬 [Discussions](https://github.com/YOUR-USERNAME/aws-mac-bootstrap-bedrock-sagemaker/discussions)
+- 🐛 [Issues](https://github.com/NourALBAKOUR/aws-ai-devbox-mac/issues)
+- 💬 [Discussions](https://github.com/NourALBAKOUR/aws-ai-devbox-mac/discussions)
+
+## Attribution
+
+Created by **Nour Al Bakour**.
+
+- **Code License:** Apache License 2.0 (see [LICENSE](LICENSE))
+- **Documentation & Media License:** Creative Commons Attribution 4.0 International (CC BY 4.0) (see [LICENSE-docs](LICENSE-docs))
+
+When using or redistributing this project:
+1. Retain the copyright notice and license information
+2. Include a link to the original repository: https://github.com/NourALBAKOUR/aws-ai-devbox-mac
+3. Indicate if modifications were made
+4. For documentation or derivative works, provide appropriate credit: "Based on AWS AI DevBox for Mac by Nour Al Bakour"
+
+See [NOTICE](NOTICE) for additional attribution requirements and third-party dependencies.
 
 ---
 

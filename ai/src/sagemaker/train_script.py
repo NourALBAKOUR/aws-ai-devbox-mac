@@ -1,6 +1,9 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Nour Al Bakour
+
 """
-SageMaker Training Script (Script Mode)
-Example training script for PyTorch or SKLearn model
+SageMaker Training Script (Scikit-Learn Example)
+This is a minimal training script for demonstration.
 """
 
 import argparse

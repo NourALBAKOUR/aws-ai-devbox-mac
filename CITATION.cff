@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Al Bakour"
+    given-names: "Nour"
+title: "AWS AI DevBox for Mac"
+version: 0.1.0
+date-released: 2025-01-06
+url: "https://github.com/NourALBAKOUR/aws-ai-devbox-mac"
+repository-code: "https://github.com/NourALBAKOUR/aws-ai-devbox-mac"
+license: Apache-2.0
+keywords:
+  - AWS
+  - Amazon Bedrock
+  - Amazon SageMaker
+  - Terraform
+  - Terragrunt
+  - macOS
+  - DevOps
+  - Infrastructure as Code
+  - AI/ML
+  - Bootstrap
+abstract: "A comprehensive macOS development environment setup for AWS AI/ML work, featuring automated installation of AWS tools, Terraform/Terragrunt infrastructure as code tools, Python AI/ML libraries, and complete project scaffolding for Amazon Bedrock and SageMaker development."

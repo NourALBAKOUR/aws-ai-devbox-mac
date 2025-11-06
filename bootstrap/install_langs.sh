@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Nour Al Bakour
 #
 # install_langs.sh
 # Installs Python, Node.js, and Java toolchains

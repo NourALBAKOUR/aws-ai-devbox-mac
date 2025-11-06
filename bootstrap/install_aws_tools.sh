@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 #
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Nour Al Bakour
+#
 # install_aws_tools.sh
-# Installs AWS CLI v2, SAM CLI, CDK, session-manager-plugin, aws-vault, etc.
+# Installs AWS CLI v2, Session Manager Plugin, SAM CLI, CDK, aws-vault, aws-sso-util
+#
 #
 
 set -euo pipefail
