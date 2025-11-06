@@ -1,0 +1,55 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: detect-private-key
+
+  - repo: https://github.com/psf/black
+    rev: 23.12.1
+    hooks:
+      - id: black
+        language_version: python3.11
+        args: ['--line-length=100']
+
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.1.8
+    hooks:
+      - id: ruff
+        args: ['--fix', '--exit-non-zero-on-fix']
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.1
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-requests, types-pyyaml]
+        args: ['--ignore-missing-imports']
+
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.86.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
+      - id: terraform_docs
+        args:
+          - '--args=--lockfile=false'
+      - id: terraform_tflint
+        args:
+          - '--args=--only=terraform_deprecated_interpolation'
+          - '--args=--only=terraform_deprecated_index'
+          - '--args=--only=terraform_unused_declarations'
+          - '--args=--only=terraform_comment_syntax'
+          - '--args=--only=terraform_documented_outputs'
+          - '--args=--only=terraform_documented_variables'
+          - '--args=--only=terraform_typed_variables'
+          - '--args=--only=terraform_module_pinned_source'
+          - '--args=--only=terraform_naming_convention'
+          - '--args=--only=terraform_required_version'
+          - '--args=--only=terraform_required_providers'

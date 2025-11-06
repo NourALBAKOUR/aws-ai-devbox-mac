@@ -1,0 +1,44 @@
+{
+    "name": "AWS AI DevBox",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "features": {
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        },
+        "ghcr.io/devcontainers/features/terraform:1": {
+            "version": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.black-formatter",
+                "charliermarsh.ruff",
+                "ms-toolsai.jupyter",
+                "hashicorp.terraform",
+                "ms-azuretools.vscode-docker",
+                "amazonwebservices.aws-toolkit-vscode"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.formatting.provider": "black",
+                "python.linting.ruffEnabled": true,
+                "editor.formatOnSave": true,
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
+    },
+    "postCreateCommand": "pip install poetry && poetry config virtualenvs.in-project true && poetry install",
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached"
+    ],
+    "runArgs": [
+        "--env-file",
+        ".env"
+    ],
+    "forwardPorts": [8888, 8080, 3000]
+}

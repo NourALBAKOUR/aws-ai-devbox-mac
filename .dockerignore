@@ -1,0 +1,64 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Documentation
+*.md
+LICENSE
+CHANGELOG.md
+CONTRIBUTING.md
+
+# CI/CD
+.github/
+.pre-commit-config.yaml
+
+# Terraform
+terraform/
+*.tf
+*.tfvars
+*.hcl
+
+# Testing
+tests/
+*.test.py
+
+# Misc
+tmp/
+temp/
+*.log

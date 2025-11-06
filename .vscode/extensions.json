@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "charliermarsh.ruff",
+        "ms-toolsai.jupyter",
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-docker",
+        "amazonwebservices.aws-toolkit-vscode",
+        "ms-vscode-remote.remote-containers",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode"
+    ]
+}
